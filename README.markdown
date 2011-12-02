@@ -1,4 +1,49 @@
+What is?
+--------
 
+A custom Liquid tag and block to be used with Jekyll/Octopress to generate
+footnotes.
+
+How To Use?
+-----------
+
+```
+This text needs to point to a footnote{% fn_ref 1 %} because it's good{% footnote_ref 2 %}.
+
+{% footnotes %}
+  {% fn A footnote is this text at the end of you page that explains something. %}
+  {% fn It's good because I like it. %}
+{% endfootnotes%}
+```
+
+Output:
+
+``` html
+<p>This text needs to point to a footnote<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> because it's good<sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup>.</p>
+
+<div class="footnotes">
+	<ol>
+		<li id="fn:1">A footnote is this text at the end of you page that explains something.<a href="#fnref:1" rev="footnote">↩</a></li>
+		<li id="fn:2">It's good because I like it.<a href="#fnref:2" rev="footnote">↩</a></li>
+	</ol>
+</div>
+```
+
+Both <code>fn_ref</code> and <code>footnote_ref</code> means the same thing.
+Use the one you prefer.
+
+How To Install in Octopress
+---------------------------
+
+It's pretty simple:
+
+# Copy <code>footnote.rb</code> to <OCTOPRESS_DIR\>/plugins
+# Copy <code>footnote.scss</code> to <OCTOPRESS_DIR\>/sass/custom
+# And edit <code>_styles.scss</code> to import <code>footnote.scss</code>:
+
+```
+@import "footnote";
+```
 
 License
 -------
