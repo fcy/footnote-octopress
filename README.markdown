@@ -37,9 +37,9 @@ How To Install in Octopress
 
 It's pretty simple:
 
-1. Copy <code>footnote.rb</code> to <OCTOPRESS_DIR\>/plugins
-2. Copy <code>footnote.scss</code> to <OCTOPRESS_DIR\>/sass/custom
-3. And edit <code>_styles.scss</code> to import <code>footnote.scss</code>:
+1. Copy <code>footnote.rb</code> to <code><OCTOPRESS_DIR\>/plugins</code>
+2. Copy <code>footnote.scss</code> to <code><OCTOPRESS_DIR\>/sass/custom</code>
+3. And edit <code><OCTOPRESS_DIR\>/sass/custom/_styles.scss</code> to import <code>footnote.scss</code>:
 
 ```
 @import "footnote";
