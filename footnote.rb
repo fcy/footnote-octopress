@@ -68,8 +68,8 @@ module Footnote
 
 		private
 		def handle_fn_tag(params)
-			ref_text = params
-			@footnotes << "<li id='fn:#{@current_reference}'>#{ref_text}<a href='#fnref:#{@current_reference}' rev='footnote'>↩</a></li>"
+			ref_text = RDiscount.new("#{params}<a href='#fnref:#{@current_reference}' rev='footnote'>↩</a>").to_html
+			@footnotes << "<li id='fn:#{@current_reference}'>#{ref_text}</li>"
 			@current_reference += 1
 		end
 	end
