@@ -43,14 +43,11 @@ It's pretty simple:
 1. Copy <code>footnote.rb</code> to <code>OCTOPRESS_DIR/plugins</code>
 2. Copy <code>footnote.scss</code> to <code>OCTOPRESS_DIR/sass/custom</code>
 3. Edit <code>OCTOPRESS_DIR/sass/custom/_styles.scss</code> to import <code>footnote.scss</code>:
-
 ``` scss
 @import "footnote";
 ```
-
 4. Copy <code>footnote.js</code> to <code>OCTOPRESS_DIR/source/javascripts</code>
 5. Edit <code>OCTOPRESS_DIR/source/_includes/custom/head.html</code> to load jQuery and footnote.js<code>footnote.scss</code>:
-
 ``` html
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
 <script src="{{ root_url }}/javascripts/footnotes.js" type="text/javascript"></script>
