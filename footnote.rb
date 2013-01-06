@@ -9,8 +9,8 @@
 # This text needs to point to a footnote{% fn_ref 1 %} because it's good{% footnote_ref 2 %}.
 #
 # {% footnotes %}
-#   {% fn A footnote is this text at the end of you page that explains something. %}
-#   {% fn It's good because I like it. %}
+#   {% fn %} A footnote is this text at the end of you page that explains something.
+#   {% fn %} It's good because I like it.
 # {% endfootnotes%}
 #
 # HTML generated
@@ -60,15 +60,16 @@ module Footnote
 
 		def unknown_tag(name, params, tokens)
 			if name == 'fn'
-				handle_fn_tag(params)
+				handle_fn_tag(tokens.shift)
 			else
 				super
 			end
 		end
 
 		private
-		def handle_fn_tag(params)
-			ref_text = RDiscount.new("#{params}<a href='#fnref:#{@current_reference}' rev='footnote'>↩</a>").to_html
+		
+		def handle_fn_tag(text)
+			ref_text = RDiscount.new("#{text}<a href='#fnref:#{@current_reference}' rev='footnote'>↩</a>").to_html
 			@footnotes << "<li id='fn:#{@current_reference}'>#{ref_text}</li>"
 			@current_reference += 1
 		end
