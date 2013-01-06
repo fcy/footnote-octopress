@@ -14,8 +14,8 @@ How To Use?
 This text needs to point to a footnote{% fn_ref 1 %} because it's good{% footnote_ref 2 %}.
 
 {% footnotes %}
-  {% fn A footnote is this text at the end of you page that explains something. %}
-  {% fn It's good because I like it. %}
+  {% fn %} A footnote is this text at the end of you page that explains something.
+  {% fn %} It's good because I like it.
 {% endfootnotes%}
 ```
 
