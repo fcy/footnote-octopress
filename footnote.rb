@@ -60,7 +60,8 @@ module Footnote
 
 		def unknown_tag(name, params, tokens)
 			if name == 'fn'
-				handle_fn_tag(tokens.shift)
+				text = tokens.shift || params
+				handle_fn_tag(text)
 			else
 				super
 			end
